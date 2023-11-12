@@ -1,12 +1,14 @@
 'use client'
-import React, { useState } from 'react';
-import { useGlobalContext } from '@/contexts/store';
-import Link from 'next/link';
 
-export default function Home() {
-  const { wallet, setWallet, setError, error } = useGlobalContext();
-  const [actualQuestion, setActualQuestion] = useState(null as number | null);
+import { useGlobalContext } from "@/contexts/store"
+import { useEffect } from "react";
 
+export default () => {
+  const {answers} = useGlobalContext();
+
+  useEffect(() => {
+    console.dir(answers)
+  })
   return (
     <main>
       <div className="px-4 py-5 my-5 d-flex justify-content-center">
@@ -14,7 +16,7 @@ export default function Home() {
           <img src="https://48tools.com/wp-content/uploads/2015/09/shortlink.png" className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="card-title text-center">Sample Survey</h5>
-            <Link href="/questions/0" type="button" className="btn btn-outline-primary w-100 btn-md px-4 gap-3">Start</Link>
+            <button type="button" className="btn btn-outline-primary w-100 btn-md px-4 gap-3">Submit</button>
           </div>
         </div>
       </div>
