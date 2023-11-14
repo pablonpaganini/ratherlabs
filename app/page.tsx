@@ -1,12 +1,8 @@
 'use client'
 import React, { useState } from 'react';
-import { useGlobalContext } from '@/contexts/store';
 import Link from 'next/link';
 
 export default function Home() {
-  const { wallet, setWallet, setError, error } = useGlobalContext();
-  const [actualQuestion, setActualQuestion] = useState(null as number | null);
-
   return (
     <main>
       <div className="px-4 py-5 my-5 d-flex justify-content-center">
